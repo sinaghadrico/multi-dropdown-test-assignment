@@ -76,22 +76,13 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             cursor: pointer;
-            &:hover,
-            &.selected {
-                background-color: #e9f2fe;
-                color: var(--primary-color);
-                border-radius: var(--default-radius);
-                -webkit-border-radius: var(--default-radius);
-                -moz-border-radius: var(--default-radius);
-                -ms-border-radius: var(--default-radius);
-                -o-border-radius: var(--default-radius);
-            }
-
-            &.selected {
-                &::after {
-                    display: block;
-                }
-            }
+            background-color: #e9f2fe;
+            color: var(--primary-color);
+            border-radius: var(--default-radius);
+            -webkit-border-radius: var(--default-radius);
+            -moz-border-radius: var(--default-radius);
+            -ms-border-radius: var(--default-radius);
+            -o-border-radius: var(--default-radius);
         }
     }
 
