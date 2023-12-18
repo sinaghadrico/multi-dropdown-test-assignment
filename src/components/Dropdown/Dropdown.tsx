@@ -8,7 +8,7 @@ import DropdownItemSelected from './DropdownItemSelected';
 
 const Dropdown: FC<DropdownProps<DropdownOption>> = (props) => {
     const { placeholder } = props;
-    const { options, selectedOptions, isOpen, dropdownRef, setIsOpen, handleInputKeyDown, toggleSelect } =
+    const { options, selectedOptions, isOpen, inputRef, dropdownRef, toggleOpen, handleInputKeyDown, toggleSelect } =
         useDropdown(props);
 
     return (
@@ -33,10 +33,11 @@ const Dropdown: FC<DropdownProps<DropdownOption>> = (props) => {
                 type="text"
                 className={`dropdown__input ${isOpen ? 'open' : ''}`}
                 onKeyDown={handleInputKeyDown}
-                onFocus={() => setIsOpen(true)}
+                onFocus={toggleOpen}
                 placeholder={placeholder}
+                ref={inputRef}
             />
-            <div className={`dropdown__arrow ${isOpen ? 'open' : ''}`}>
+            <div className={`dropdown__arrow ${isOpen ? 'open' : ''}`} onClick={toggleOpen}>
                 <ArrowUp />
             </div>
             {isOpen && (
