@@ -1,0 +1,2 @@
+const baseApiUrl = ""
+export { baseApiUrl }
